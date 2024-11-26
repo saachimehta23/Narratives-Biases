@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="text-content">
+                <h1>Sample Text Heading</h1>
+                <p>This is a block of text on the left side of the page.</p>
+            </div>
+            <div class="buttons">
+                <button id="catalogBtn" class="btn active">Catalog</button>
+                <button id="categorizeBtn" class="btn">Categorize</button>
+            </div>
+        </div>
+        
+        <!-- Layer for Annotations -->
+        <div id="annotations" class="annotations">
+            <img src="annotations.png" alt="Annotations">
+        </div>
+    </div>
+
+    <script>
+        // Button click functionality to toggle annotations layer visibility
+        document.getElementById('catalogBtn').addEventListener('click', function() {
+            document.getElementById('annotations').style.display = 'none';
+            document.getElementById('catalogBtn').classList.add('active');
+            document.getElementById('categorizeBtn').classList.remove('active');
+        });
+
+        document.getElementById('categorizeBtn').addEventListener('click', function() {
+            document.getElementById('annotations').style.display = 'block';
+            document.getElementById('categorizeBtn').classList.add('active');
+            document.getElementById('catalogBtn').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+
 </body>
 </html>

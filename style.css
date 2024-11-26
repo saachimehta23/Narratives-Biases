@@ -1,0 +1,89 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Container to align the content */
+.container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Left panel (beige rectangle with transparency) */
+.left-panel {
+    width: 400px;
+    background-color: rgba(245, 222, 179, 0.3); /* Beige color with 70% transparency */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text content inside the left panel */
+.text-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6a1b9a;
+}
+
+/* Active state for the buttons */
+.btn.active {
+    background-color: #9c27b0;
+}
+
+/* Annotations layer (hidden by default) */
+.annotations {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 420px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to highlight the annotations */
+    z-index: 10;
+}
+
+.annotations img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
