@@ -3,45 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>The Bias of Memoory</title>
+    <!-- STYLE SHEET LINK -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- ADOBE FONT TYPEFACE LINK -->
+    <link rel="stylesheet" href="https://use.typekit.net/cdh0qkz.css">
+
+    <meta name="author" content="Saachi Mehta">
+    <meta name="description" content="Critical Readings of Historical Documents">
+    <!-- <link rel="icon" type="png" href=""></link> -->
 </head>
+
+
 <body>
 
-    <div class="container">
-        <div class="left-panel">
-            <div class="text-content">
-                <h1>Sample Text Heading</h1>
-                <p>This is a block of text on the left side of the page.</p>
-            </div>
-            <div class="buttons">
-                <button id="catalogBtn" class="btn active">Catalog</button>
-                <button id="categorizeBtn" class="btn">Categorize</button>
-            </div>
-        </div>
+    <div class="cover" onclick="this.classList.add('hidden')">Bias of the Memory</div>
+
+<div class="full-page">
+
+    <div class="title-col"><span class="title-col-text">Bias of the Memory</span></div>
+
+    <div class="main-content">
+        <!-- <div class="button-right">hello</div> -->
         
-        <!-- Layer for Annotations -->
-        <div id="annotations" class="annotations">
-            <img src="annotations.png" alt="Annotations">
-        </div>
+<!-- <div class="diagonal">
+    <img src="/Images/Diagonal.png">
+</div> -->
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="/Images/Plates_1.png" alt="Red card front">
+                </div>
+                <div class="card-back">
+                    <img src="/Images/Plates_1Back.png" alt="Blue card back">
+                </div>
+            </div>
+            </div>
+
+            
+        <!-- <div class="scroll-content">a new</div> 
+        <div class="button-left">flexbox</div> -->
+    <div class="main-content-text">Catalog/Categorize 
+        There is a deep-seated human desire to categorize and impose order on chaotic or unfamiliar environments.  
+         
+        This impulse to organize is a way of mastering the unknown and making sense of new experiences, turning unfamiliar landscapes into comprehensible ones.Catalog/Categorize 
+        There is a deep-seated human desire to categorize and impose order on chaotic or unfamiliar environments.  
+         
+        This impulse to organize is a way of mastering the unknown and making sense of new experiences, turning unfamiliar landscapes into comprehensible ones. Catalog/Categorize 
+        There is a deep-seated human desire to categorize and impose order on chaotic or unfamiliar environments.  
+         
+        This impulse to organize is a way of mastering the unknown and making sense of new experiences, turning unfamiliar landscapes into comprehensible ones.</div>
+    </div>
+    
+
+    <div class="nav-bar-right">
+        <div class="page-number">1</div>
+        <div class="page-number">2</div>
+        <div class="page-number">3</div>
+        <div class="page-number">4</div>
+        <div class="page-number">5</div>
+        <div class="page-number">6</div>
+        <div class="page-number">7</div>
+        <div class="page-number">8</div>
+        <div class="page-number">9</div>
     </div>
 
-    <script>
-        // Button click functionality to toggle annotations layer visibility
-        document.getElementById('catalogBtn').addEventListener('click', function() {
-            document.getElementById('annotations').style.display = 'none';
-            document.getElementById('catalogBtn').classList.add('active');
-            document.getElementById('categorizeBtn').classList.remove('active');
-        });
 
-        document.getElementById('categorizeBtn').addEventListener('click', function() {
-            document.getElementById('annotations').style.display = 'block';
-            document.getElementById('categorizeBtn').classList.add('active');
-            document.getElementById('catalogBtn').classList.remove('active');
-        });
-    </script>
-</body>
-</html>
+    
 
+
+</div>
+         
 </body>
 </html>

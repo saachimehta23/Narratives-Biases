@@ -1,89 +1,286 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    border: none;
 }
 
-/* Overall Page Styling */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.pixel-font {
+    font-family: "pf-pixelscript", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "louise", serif;
+    src: url(/Fonts/Louise-Regular.otf);
+}
+
+@font-face {
+    font-family: "director-reg" ;
+    src: url("/Fonts/Director-Regular.otf") format("opentype");
+}
+
+.full-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    width: 100vw;
+    /* background-color: black; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-/* Container to align the content */
-.container {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-}
-
-/* Left panel (beige rectangle with transparency) */
-.left-panel {
-    width: 400px;
-    background-color: rgba(245, 222, 179, 0.3); /* Beige color with 70% transparency */
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Text content inside the left panel */
-.text-content h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.text-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-/* Button styling */
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background-color: purple;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #6a1b9a;
-}
-
-/* Active state for the buttons */
-.btn.active {
-    background-color: #9c27b0;
-}
-
-/* Annotations layer (hidden by default) */
-.annotations {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 420px;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay to highlight the annotations */
-    z-index: 10;
-}
-
-.annotations img {
-    position: absolute;
+.cover {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    background-color: #7115D2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F1E5CE;
+    font-family: "louise", serif;
+    font-size: 60px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 1s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* TITLE BAR */
+.title-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #F1E5CE;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-col-text {
+    font-family: "louise", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    color: #F1E5CE;
+    text-align: center;
+}
+
+.title-col:hover {
+    background-color: #7115D2;
+}
+
+.title-col:active {
+    background-color: #7115D2;
+}
+/* TITLE BAR END*/
+
+/* RIGHT NAVIGATION BAR */
+.nav-bar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #F1E5CE;
+    z-index: 1;
+    background-color: black;
+}
+
+.page-number {
+    display: flex;
+    flex: 1;
+    border-right: 1px solid #F1E5CE;
+    font-family: "louise", serif;
+    color: #F1E5CE;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.page-number:last-child {
+    border-right: none;
+}
+
+.page-number:hover {
+    background-color: #7115D2;
+}
+
+.page-number:active {
+    background-color: #7115D2;
+}
+/* RIGHT NAVIGATION BAR DONE */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 100px); /* Subtract height of title and nav bars */
+    /* gap: 10px; */
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-content-text{
+    display: flex;
+    /* width: 60%; */
+    height: 450px;
+    font-family: "director-reg", serif;
+    font-size: 15px;
+    text-align: left;
+    color: #F1E5CE;
+    padding: 30px;
+    margin: 0px;
+    max-width: 400px;
+    overflow: auto;
+
+}
+
+.diagonal{
+    position: absolute;
+    z-index: 1;
+    height: 50vh;
+    width: 100vw;
+    top: 35px;
+    transform: rotate();
+}
+
+/* FOR IMAGE PLATE */
+.card {
+    display: flex;
+    margin: 15px;
+    width: 70%;
+    height: 450px;
+    perspective: 1000px;
+    /* padding: 30px; */
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    margin-right: 10px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Desktop/Larger Screen Styles */
+@media (min-width: 1024px) {
+    .full-page {
+        flex-direction: row;
+    }
+
+    .title-col {
+        flex-direction: column;
+        width: 5%;
+        height: 100vh;
+        border-right: 1px solid #F1E5CE;
+        border-bottom: none;
+  
+    }
+
+    .title-col-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+    
+    .title-col:hover {
+        background-color: #7115D2;
+        z-index: 2;
+    }
+    
+    .title-col:active {
+        background-color: #7115D2;
+        z-index: 2;
+    }
+    .nav-bar-right {
+        flex-direction: column;
+        width: 5%;
+        height: 100vh;
+        border-left: 1px solid #F1E5CE;
+        border-top: none;
+    }
+
+    .page-number {
+        border-right: none;
+        border-bottom: 1px solid #F1E5CE;
+    }
+
+    .page-number:last-child {
+        border-bottom: none;
+    }
+
+    .main-content {
+        width: 90%;
+        height: 100vh;
+        flex-direction: row;
+    }
+
+    .card {
+        width: 30%;
+        min-width: 500px;
+    }
+
+    .main-content-text {
+        /* width: 50%; */
+       min-width: 500px;
+    }
+
+    .diagonal{
+        position: absolute;
+        z-index: 0;
+        height: 90vh;
+        width: 80vw;
+        left: -100px;
+        top: 50px;
+    }
 }
