@@ -81,7 +81,7 @@ html, body {
     z-index: 1;
 }
 
-.cover span {
+.cover-text {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -185,7 +185,7 @@ html, body {
 .main-content-text{
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 80%;
     height: 500px;
     font-family: "director-light", serif;
     font-size: 14px;
