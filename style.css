@@ -185,7 +185,6 @@ html, body {
 .main-content-text{
     display: flex;
     flex-direction: column;
-    width: 80%;
     height: 500px;
     font-family: "director-light", serif;
     font-size: 14px;
