@@ -20,12 +20,17 @@ html, body {
 
 @font-face {
     font-family: "louise", serif;
-    src: url(/Fonts/Louise-Regular.otf);
+    src: url("/Fonts/Louise-Regular.otf") format("opentype");
 }
 
 @font-face {
     font-family: "director-reg" ;
     src: url("/Fonts/Director-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "director-light" ;
+    src: url("/Fonts/Director-Light.otf") format("opentype");
 }
 
 .full-page {
@@ -35,7 +40,6 @@ html, body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    /* background-color: black; */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -111,6 +115,7 @@ html, body {
     flex: 1;
     border-right: 1px solid #F1E5CE;
     font-family: "louise", serif;
+    font-size: 15px;
     color: #F1E5CE;
     justify-content: center;
     align-items: center;
@@ -126,7 +131,7 @@ html, body {
 }
 
 .page-number:active {
-    background-color: #7115D2;
+    background-color:#F1E5CE;
 }
 /* RIGHT NAVIGATION BAR DONE */
 
@@ -146,8 +151,10 @@ html, body {
     display: flex;
     /* width: 60%; */
     height: 450px;
-    font-family: "director-reg", serif;
-    font-size: 15px;
+    font-family: "director-light", serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.1em;
     text-align: left;
     color: #F1E5CE;
     padding: 30px;
@@ -157,13 +164,27 @@ html, body {
 
 }
 
+a{
+    color: #F1E5CE;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+a:active{
+    color: #7115D2;
+    text-decoration: none;
+}
 .diagonal{
     position: absolute;
     z-index: 1;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
-    top: 35px;
-    transform: rotate();
+    top: 65px;
+    /* transform: rotate(); */
 }
 
 /* FOR IMAGE PLATE */
@@ -173,7 +194,6 @@ html, body {
     width: 70%;
     height: 450px;
     perspective: 1000px;
-    /* padding: 30px; */
     align-items: center;
     justify-content: center;
     min-width: 300px;
@@ -213,8 +233,9 @@ img {
     object-fit: contain;
 }
 
-/* Desktop/Larger Screen Styles */
-@media (min-width: 1024px) {
+/* Desktop SIZE */
+@media (min-width: 1024px) 
+{
     .full-page {
         flex-direction: row;
     }
@@ -252,13 +273,14 @@ img {
 
     .page-number {
         border-right: none;
+        font-size: 25px;
         border-bottom: 1px solid #F1E5CE;
     }
 
     .page-number:last-child {
         border-bottom: none;
     }
-
+    
     .main-content {
         width: 90%;
         height: 100vh;
@@ -267,11 +289,10 @@ img {
 
     .card {
         width: 30%;
-        min-width: 500px;
+        min-width: 400px;
     }
 
     .main-content-text {
-        /* width: 50%; */
        min-width: 500px;
     }
 
@@ -279,8 +300,9 @@ img {
         position: absolute;
         z-index: 0;
         height: 90vh;
-        width: 80vw;
-        left: -100px;
-        top: 50px;
+        width: 40vw;
+        left:200px;
+        top: 60px;
+        transform: rotate(5deg);
     }
 }
