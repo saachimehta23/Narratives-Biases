@@ -33,6 +33,12 @@ html, body {
     src: url("/Fonts/Director-Light.otf") format("opentype");
 }
 
+.director-reg{
+    display: flex;
+    font-family: "director-reg" ;
+    color: #7115D2;
+}
+
 .full-page {
     display: flex;
     flex-direction: column;
@@ -149,6 +155,7 @@ html, body {
 
 .main-content-text{
     display: flex;
+    flex-direction: row;
     /* width: 60%; */
     height: 450px;
     font-family: "director-light", serif;
@@ -161,8 +168,8 @@ html, body {
     margin: 0px;
     max-width: 400px;
     overflow: auto;
-
 }
+
 
 a{
     color: #F1E5CE;
@@ -191,7 +198,7 @@ a:active{
 .card {
     display: flex;
     margin: 15px;
-    width: 70%;
+    width: 80%;
     height: 450px;
     perspective: 1000px;
     align-items: center;
